@@ -1,0 +1,6 @@
+fileFormatVersion: 2
+guid: 6942930322519fe40b962876150a425e
+ShaderImporter:
+  defaultTextures:
+  - _Cubemap: {fileID: 8900000, guid: 349e24a33f52a754695283f3fd660eaa, type: 3}
+  userData: 

@@ -6,8 +6,8 @@ public class TerrainControll : MonoBehaviour {
 
 
 	//回転
-	private float RotSpeed = 90.0f; //回転速度係数
-	private float LimitRotX = 50f; //回転可能限界
+	private float RotSpeed = 10.0f; //回転速度係数
+	private float LimitRotX = 10f; //回転可能限界
 
 
 	//CharacterController
@@ -28,25 +28,25 @@ public class TerrainControll : MonoBehaviour {
 		
 		/////キー入力確認 各キーが押されているか
 		if (Input.GetKey(KeyCode.LeftArrow)){
-			RotY = -5f;
+			RotY = -1f;
 		}
 		else if (Input.GetKey(KeyCode.RightArrow)){
-			RotY = 5f;
+			RotY = 1f;
 		}
 		if (Input.GetKey(KeyCode.UpArrow)){
-			RotX = -5f;
+			RotX = -1f;
 		}
 		else if (Input.GetKey(KeyCode.DownArrow)){
-			RotX = 5f;
+			RotX = 1f;
 		}
 		
 		//回転予定角度X
 		float NextRotX = transform.eulerAngles.x + RotX * RotSpeed *Time.deltaTime;
 		
 		//x方向の回転を制限  回転可能角度外
-		if(NextRotX > LimitRotX && NextRotX < 75f - LimitRotX){
+		if(NextRotX > LimitRotX && NextRotX < 10f - LimitRotX){
 			//下と上のどちらから可能角度を超えたか それに応じて制限
-			NextRotX = NextRotX > 75f ? 75f - LimitRotX : LimitRotX;
+			NextRotX = NextRotX > 10f ? 10f - LimitRotX : LimitRotX;
 		}
 		
 		//回転

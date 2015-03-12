@@ -1,20 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class player : MonoBehaviour {
-	public Vector3 acceleration;	// 加速度
+public class Player : MonoBehaviour {
 	
-	void FixedUpdate () {
-		// 加速度与える
-	rigidbody.AddForce(acceleration, ForceMode.Acceleration);
-	}
+	public Text text;
 	// Use this for initialization
 	void Start () {
-		Physics.gravity = new Vector3(0, 9.81f, 0);
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
+	
+	
+	//Collision Detection
+	void OnControllerColliderHit (ControllerColliderHit charctor){
+		if(charctor.collider.gameObject.name == "Goal"){
+			Debug.Log ("Goal");
+			text.enabled = true;
+		}
+	}
+	
 }
+

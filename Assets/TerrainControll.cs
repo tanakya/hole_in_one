@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class TerrainControll : MonoBehaviour {
-	
-	
+
+
 	
 	//回転
 	private float RotSpeed = 30.0f; //回転速度係数
@@ -38,7 +38,7 @@ public class TerrainControll : MonoBehaviour {
 			RotX = -1f;
 		}
 		else if (Input.GetKey(KeyCode.DownArrow)){
-			RotX = 1f;
+			 RotX = 1f;
 		}
 		
 		//回転予定角度X
@@ -61,8 +61,8 @@ public class TerrainControll : MonoBehaviour {
 		//回転
 		transform.rotation = Quaternion.Euler( 
 		                                      NextRotX, 
-		                                      transform.eulerAngles.z + RotZ * RotSpeed *Time.deltaTime ,
-		                                      transform.eulerAngles.y
+		                                      transform.eulerAngles.y,
+		                                      NextRotZ
 		                                      ) ;
 		
 		

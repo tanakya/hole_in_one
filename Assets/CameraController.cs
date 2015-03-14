@@ -2,14 +2,14 @@
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
-	public Transform Player;
+	public Transform Terrain;
 	Vector3 relativePosition;
 	
 	void Start () {
-		relativePosition = transform.position - Player.position;
+		relativePosition = transform.position - Terrain.position;
 	}
 	
 	void LateUpdate () {
-		transform.position = Player.position + relativePosition;
+		transform.position = Terrain.position + relativePosition;
 	}
 }

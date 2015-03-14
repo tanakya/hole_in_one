@@ -16,12 +16,19 @@ public class Player : MonoBehaviour {
 	
 	
 	//Collision Detection
-	void OnControllerColliderHit (ControllerColliderHit charctor){
-		if(charctor.collider.gameObject.name == "Goal"){
-			Debug.Log ("Goal");
-			text.enabled = true;
+//	void OnControllerColliderHit (ControllerColliderHit charctor){
+//		if(charctor.collider.gameObject.name == "Goal"){
+//			Debug.Log ("Goal!");
+//			text.enabled = true;
+//		}
+//	}
+
+	void OnTriggerEnter(Collider col){
+				if (col.collider.gameObject.name == "Goal") {
+						Debug.Log ("goal");
+						text.enabled = true;
+				}
 		}
-	}
 	
 }
 
